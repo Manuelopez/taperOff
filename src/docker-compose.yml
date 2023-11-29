@@ -1,0 +1,13 @@
+version: "3"
+services:
+  api:
+    platform: linux/arm64
+    build: ./api
+    container_name: "taperOff-api"
+  proxy:
+    platform: linux/arm64
+    build: ./nginx
+    container_name: "taperOff-proxy"
+    restart: always
+    ports:
+      - "80:80"
